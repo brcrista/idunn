@@ -3,6 +3,8 @@ import os
 import pandas as pd
 import yaml
 
+from idunn.console import Console
+
 def _load_tsv(filename: str) -> pd.DataFrame:
     """
     Loads a file in TSV format with the expected schema.
@@ -17,10 +19,11 @@ def _to_song(row: pd.Series):
         'album': row.Album
     }
 
-def run(input_file, console):
+def run(input_file: str, console: Console) -> None:
     """
     Loads data from the input file, converts it, and writes the output file.
     """
+    # Validate input first.
     root, ext = os.path.splitext(input_file)
     if ext != '.txt':
         console.warning(f"The input file {input_file} does not have a .txt extension. Are you sure it's the right file?")
@@ -30,6 +33,7 @@ def run(input_file, console):
     if not playlist_name:
         raise ValueError(f'I could not determine the playlist name from {input_file}. I expect a filename like "playlist.txt"')
 
+    # Start doing fun stuff.
     dataframe = _load_tsv(input_file)
     console.info(f'I done loaded the data from {input_file}.')
 

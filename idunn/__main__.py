@@ -1,7 +1,7 @@
 import sys
 
-import idunn
-from console import Console
+from idunn import idunn
+from idunn.console import Console
 
 usage = 'python -m idunn playlist-file.txt'
 
@@ -10,7 +10,7 @@ def main(args):
 
     try:
         if len(args) != 2:
-            console.info(f'Usage: {usage}')
+            print(f'Usage: {usage}')
             return 1
 
         idunn.run(input_file=args[1], console=console)

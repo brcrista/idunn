@@ -12,7 +12,7 @@ I want a way to take snapshots of my playlists -- as text files, naturally, so t
 
 Apple Music provides a [way to export playlists](https://support.apple.com/guide/music/save-a-copy-of-your-playlists-mus27cd5060f/mac), either in TSV or XML.
 
-[[ screenshot goes here ]]
+![screenshot](docs/img/export-playlist.png)
 
 These formats aren't human-readable. They do have an advantage in that you can use them to import the data back into Apple Music, so might want to keep them handy after you're done. Note the caveat, though:
 

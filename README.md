@@ -14,6 +14,7 @@ I want a way to take snapshots of my playlists -- as text files, naturally, so t
 
 ```sh
 git clone https://github.com/brcrista/idunn.git && cd idunn
+# Recommended: create and activate a venv first
 make install # or `pip install .`
 ```
 
@@ -44,4 +45,23 @@ songs:
   artist: Lana Del Rey
   album: Looking for America - Single
 # etc.
+```
+
+### Batch processing
+
+You can use a script like this to process a bunch of playlists in batch. (You have to export them individually, though.)
+
+```sh
+#!/usr/bin/env bash
+set -e
+
+source ../idunn-venv/bin/activate
+
+for x in *.txt
+do
+    [[ -e "$x" ]] || break
+    python -m idunn "$x"
+done
+
+deactivate
 ```

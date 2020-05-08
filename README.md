@@ -49,7 +49,7 @@ songs:
 
 ### Batch processing
 
-You can use a script like this to process a bunch of playlists in batch. (You have to export them individually, though.)
+You can use a script like this to process a bunch of playlists at once. (You have to export them individually, though.)
 
 ```sh
 #!/usr/bin/env bash
@@ -60,7 +60,7 @@ source ../idunn-venv/bin/activate
 for x in *.txt
 do
     [[ -e "$x" ]] || break
-    python -m idunn "$x"
+    python3 -m idunn "$x"
 done
 
 deactivate

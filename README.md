@@ -40,10 +40,8 @@ songs:
 - name: Float On
   artist: Magic Mouse
   album: Good News for People Who Love Bad News
-
-- name: Blinding Lights
-  artist: The Weeknd
-  album: Blinding Lights - Single
-
+- name: Looking for America
+  artist: Lana Del Rey
+  album: Looking for America - Single
 # etc.
 ```

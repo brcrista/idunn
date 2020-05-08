@@ -53,6 +53,9 @@ def run(input_file: str, console: Console) -> None:
         raise ValueError(f'The output file {yaml_file} already exists. Please move or remove it before trying again.')
 
     with open(yaml_file, 'w', encoding='utf-8') as output_file:
-        yaml.dump(playlist, output_file, encoding='utf-8')
+        # Since 3.6, dictionaries retain the insertion order of their elements.
+        # (Undocumented in 3.6, guaranteed in 3.7)
+        # So, we just have to set `sort_keys=False` to keep the order.
+        yaml.dump(playlist, output_file, encoding='utf-8', sort_keys=False)
 
     console.info(f'I done wrote the output to {yaml_file}.')

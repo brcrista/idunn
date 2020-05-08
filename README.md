@@ -13,9 +13,9 @@ I want a way to take snapshots of my playlists -- as text files, naturally, so t
 `idunn` depends on Python 3.6 or greater.
 
 ```sh
-git clone https://github.com/brcrista/idunn.git && cd idunn
+git clone https://github.com/brcrista/idunn.git
 # Recommended: create and activate a venv first
-make install # or `pip install .`
+pip install idunn
 ```
 
 ## How?

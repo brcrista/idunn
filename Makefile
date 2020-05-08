@@ -1,3 +1,6 @@
+PIP := pip3
+PYTHON := python3
+
 .PHONY: all
 all: clean build sdist install
 
@@ -11,16 +14,16 @@ clean:
 
 .PHONY: build
 build:
-	python setup.py build
+	$(PYTHON) setup.py build
 
 .PHONY: sdist
 sdist:
-	python setup.py sdist
+	$(PYTHON) setup.py sdist
 
 .PHONY: install
 install:
-	python setup.py install
+	$(PYTHON) setup.py install
 
 .PHONY: uninstall
 uninstall:
-	pip uninstall idunn --yes
+	$(PIP) uninstall idunn --yes

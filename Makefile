@@ -22,7 +22,7 @@ sdist:
 
 .PHONY: install
 install:
-	$(PYTHON) setup.py install
+	$(PIP) install .
 
 .PHONY: uninstall
 uninstall:

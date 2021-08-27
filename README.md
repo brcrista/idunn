@@ -15,7 +15,7 @@ I want a way to take snapshots of my playlists -- as text files, naturally, so t
 ```sh
 git clone https://github.com/brcrista/idunn.git
 # Recommended: create and activate a venv first
-pip install idunn
+pip install idunn/
 ```
 
 ## How?

@@ -10,7 +10,9 @@ clean:
 	rm -rf dist
 	rm -rf *.egg-info
 	rm -f **/*.pyc
-	rm -f *.yml
+
+.venv:
+	$(PYTHON) -m venv $@
 
 .PHONY: build
 build:

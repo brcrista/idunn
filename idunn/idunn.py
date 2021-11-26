@@ -33,6 +33,10 @@ def run(input_file: str, console: Console) -> None:
     if not playlist_name:
         raise ValueError(f'I could not determine the playlist name from {input_file}. I expect a filename like "playlist.txt"')
 
+    yaml_file = f'{playlist_name}.yml'
+    if (os.path.exists(yaml_file)):
+        console.warning(f'The output file {yaml_file} already exists and will be overwritten.')
+
     # Start doing fun stuff.
     dataframe = _load_tsv(input_file)
     console.info(f'I done loaded the data from {input_file}.')
@@ -47,10 +51,6 @@ def run(input_file: str, console: Console) -> None:
     }
 
     console.info(f'I done collected the playlist data.')
-
-    yaml_file = f'{playlist_name}.yml'
-    if (os.path.exists(yaml_file)):
-        raise ValueError(f'The output file {yaml_file} already exists. Please move or remove it before trying again.')
 
     with open(yaml_file, 'w', encoding='utf-8') as output_file:
         # Since 3.6, dictionaries retain the insertion order of their elements.

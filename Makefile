@@ -13,6 +13,7 @@ clean:
 
 .venv:
 	$(PYTHON) -m venv $@
+	source $@/bin/activate && $(PYTHON) -m pip install --upgrade pip && $(PIP) install -r requirements.txt
 
 .PHONY: build
 build:

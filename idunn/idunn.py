@@ -19,7 +19,7 @@ def _to_song(row: pd.Series):
         'album': row.Album
     }
 
-def run(input_file: str, console: Console) -> None:
+def run(input_file: str, yes: bool, console: Console) -> None:
     """
     Loads data from the input file, converts it, and writes the output file.
     """
@@ -34,7 +34,7 @@ def run(input_file: str, console: Console) -> None:
         raise ValueError(f'I could not determine the playlist name from {input_file}. I expect a filename like "playlist.txt"')
 
     yaml_file = f'{playlist_name}.yml'
-    if (os.path.exists(yaml_file)):
+    if not yes and os.path.exists(yaml_file):
         accept = console.accept(f'The output file {yaml_file} already exists. Overwrite it?')
         if not accept:
             return

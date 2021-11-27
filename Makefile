@@ -10,7 +10,10 @@ clean:
 	rm -rf dist
 	rm -rf *.egg-info
 	rm -f **/*.pyc
-	rm -f *.yml
+
+.venv:
+	$(PYTHON) -m venv $@
+	source $@/bin/activate && $(PYTHON) -m pip install --upgrade pip && $(PIP) install -r requirements.txt
 
 .PHONY: build
 build:

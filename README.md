@@ -1,10 +1,12 @@
 # Iðunn 🍏
 
+[![CI](https://github.com/brcrista/idunn/actions/workflows/ci.yml/badge.svg)](https://github.com/brcrista/idunn/actions/workflows/ci.yml)
+
 Convert exported Apple Music playlists to YAML.
 
 ## Why?
 
-I love making playlists. Every year, every season, I make a playlist. That music becomes my soundtrack for that time in my life, and once it's gone, gives me a way for me to bring back a bygone moment.
+I love making playlists. Every year, every season, I make a playlist. That music becomes my soundtrack for that time in my life, and once it's gone, it gives me a way for me to bring back a bygone moment.
 
 I want a way to take snapshots of my playlists -- as text files, naturally, so they can be tracked in source control!
 

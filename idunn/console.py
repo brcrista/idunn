@@ -20,9 +20,6 @@ class Console:
 
     def accept(self, prompt) -> bool:
         responses = ['y', 'n', '']
-        response = input(f'{colorama.Style.RESET_ALL}> {prompt} [Y/n] ').lower()
-        while response not in responses:
+        while (response := input(f'{colorama.Style.RESET_ALL}> {prompt} [Y/n] ')).lower() not in responses:
             self.warning(f'Invalid choice: {response}')
-            response = input(f'{colorama.Style.RESET_ALL}> {prompt} [Y/n] ').lower()
-
         return response == '' or response.lower() == 'y'

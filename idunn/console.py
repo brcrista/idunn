@@ -3,6 +3,9 @@ import sys
 import colorama
 
 class Console:
+    """
+    Interfaces with a user through the command line.
+    """
     def __init__(self):
         colorama.init()
 

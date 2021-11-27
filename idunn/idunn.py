@@ -35,7 +35,9 @@ def run(input_file: str, console: Console) -> None:
 
     yaml_file = f'{playlist_name}.yml'
     if (os.path.exists(yaml_file)):
-        console.warning(f'The output file {yaml_file} already exists and will be overwritten.')
+        accept = console.accept(f'The output file {yaml_file} already exists. Overwrite it?')
+        if not accept:
+            return
 
     # Start doing fun stuff.
     dataframe = _load_tsv(input_file)
